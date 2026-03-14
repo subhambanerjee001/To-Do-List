@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>To-Do List</title>
+</head>
+<body>
+
+    <div class="container">
+    <h1>Todo-List</h1>
+    <input type="text" name="Todo" id="Todolist" placeholder="Enter your task">
+    <button id="Addbtn">Add Task</button>
+    <ol id="todo"></ol>
+    <p class="credit">Implemented by Subham Banerjee | 1st Minor Project</p>
+    </div>
+
+
+</body>
+<script>
+    const Todolist = document.getElementById("Todolist");
+    const Addbtn = document.getElementById("Addbtn");
+    Addbtn.addEventListener("click",()=>{
+        const task = Todolist.value;
+        if (task.trim() == "") {
+            alert("Please Enter the Task");
+            return;
+        }
+        console.log(task.trim());
+        const Todolistt = document.getElementById("todo");
+        const listItem = document.createElement("li");
+        const checkbox = document.createElement("input");
+        const dletebutton = document.createElement("button")
+        dletebutton.textContent="Delete Task"
+        dletebutton.style.backgroundColor = "red";
+        dletebutton.style.color = "white";
+        checkbox.type = "checkbox";
+        listItem.textContent = task;
+        listItem.appendChild(checkbox);
+        listItem.appendChild(dletebutton);
+        dletebutton.addEventListener("click",() =>{
+            listItem.remove();
+        })
+        Todolistt.appendChild(listItem);
+        Todolist.value = "";
+    });
+    
+</script>
+</html>
