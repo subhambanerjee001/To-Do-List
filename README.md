@@ -28,7 +28,6 @@ This is my 1st Minor Project created while learning Web Development.
 ✔ Input validation (prevents empty tasks)
 ✔ Smooth UI animations
 ✔ Neon-themed modern interface
-✔ Background star animation for attractive UI
 
 📂 Project Structure:
 Todo-List-Project
